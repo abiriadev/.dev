@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Section from '../components/Section.astro'
+import Table from '../components/Table.astro'
+import LinkTable from '../components/LinkTable.astro'
+import Footer from '../components/Footer.astro'
+import ProfileCode from '../components/ProfileCode.astro'
+import art from '../mika.txt?raw'
+import '../styles/global.css'
+---
+
+<Layout>
+	<div class="w-full flex justify-center px-12">
+		<div
+			class="flex flex-col flex-1 max-w-5xl min-h-screen pt-8 pb-6 text-zinc-300 font-mono"
+		>
+			<header>
+				<Section>
+					<h1 slot="header" class="text-3xl font-bold">
+						<span class="text-violet-400">Abiria</span>.dev
+					</h1>
+				</Section>
+			</header>
+			<main class="flex-1 mb-8">
+				<ProfileCode className="mb-4" />
+				<Section header="Info">
+					<Table
+						items={[
+							{
+								title: 'Name',
+								value: 'Hunee Park',
+							},
+							{
+								title: 'Location',
+								value: 'Toronto, ON, Canada',
+							},
+						]}
+					/>
+				</Section>
+				<Section header="Contacts">
+					<LinkTable
+						items={[
+							{
+								title: 'GitHub',
+								username: `abiriadev`,
+								url: `https://github.com/abiriadev`,
+							},
+							{
+								title: 'Discord',
+								username: `abiria`,
+								url: `https://discordapp.com/users/662201438621138954`,
+							},
+							{
+								title: 'X',
+								username: `@Abiria14`,
+								url: `https://x.com/Abiria14`,
+							},
+							{
+								title: 'Email',
+								username: `oro3673@gmail.com`,
+								url: `mailto:oro3673@gmail.com`,
+							},
+						]}
+					/>
+				</Section>
+				<pre class="mt-4 text-[3.6px] leading-none">{art}</pre>
+			</main>
+			<Footer />
+		</div>
+	</div>
+</Layout>

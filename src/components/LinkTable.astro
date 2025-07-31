@@ -1,0 +1,28 @@
+---
+import TableBase from './TableBase.astro'
+import TableRow, { type Props as TableRowProps } from './TableRow.astro'
+import Link from './Link.astro'
+
+export interface LinkRecord extends TableRowProps {
+	username: string
+	url: string
+}
+
+export interface Props {
+	items: Array<LinkRecord>
+}
+
+const { items } = Astro.props as Props
+---
+
+<TableBase>
+	{
+		items.map(({ title, username, url }) => (
+			<TableRow {title}>
+				<div>
+					<Link href={url}>{username}</Link>
+				</div>
+			</TableRow>
+		))
+	}
+</TableBase>

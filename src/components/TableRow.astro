@@ -1,0 +1,18 @@
+---
+export interface Props {
+	title: string
+}
+
+const { title } = Astro.props as Props
+---
+
+<tr
+	class="grid grid-cols-subgrid col-span-full relative ml-4 before:absolute before:-left-4 before:text-violet-400 before:content-['•']"
+>
+	<td class="font-semibold">
+		{title}
+	</td>
+	<td>
+		<slot />
+	</td>
+</tr>

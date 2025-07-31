@@ -1,0 +1,18 @@
+---
+import TableRow, { type Props as TableRowProps } from './TableRow.astro'
+import TableBase from './TableBase.astro'
+
+export interface Row extends TableRowProps {
+	value: string
+}
+
+export interface Props {
+	items: Array<Row>
+}
+
+const { items } = Astro.props as Props
+---
+
+<TableBase>
+	{items.map(({ title, value }) => <TableRow {title}>{value}</TableRow>)}
+</TableBase>

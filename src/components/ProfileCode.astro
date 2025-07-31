@@ -1,0 +1,16 @@
+---
+export interface Props {
+	className?: string
+}
+
+const { className } = Astro.props as Props
+---
+
+<p class={className}>
+	<code is:raw class="max-[440px]:hidden">
+		|| -> Result<_, !> { Abiria()? }
+	</code>
+	<code is:raw class="min-[440px]:hidden">
+		|| -> Result<_, !> {<br>&nbsp;&nbsp;&nbsp;&nbsp;Abiria()?<br>}
+	</code>
+</p>

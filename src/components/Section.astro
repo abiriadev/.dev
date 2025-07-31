@@ -1,0 +1,25 @@
+---
+import Divider from './Divider.astro'
+
+export interface Props {
+	header?: string
+}
+
+const { header } = Astro.props as Props
+---
+
+<section class="flex flex-col gap-1 pt-4 pb-4">
+	<slot name="header">
+		{
+			header && (
+				<h2 class="text-xl text-violet-400 font-semibold">
+					# {header}
+				</h2>
+			)
+		}
+	</slot>
+	<Divider class="mb-1" />
+	<div class="pl-2">
+		<slot />
+	</div>
+</section>

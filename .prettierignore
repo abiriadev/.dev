@@ -1,0 +1,4 @@
+dist
+ignored
+.idea
+pnpm-lock.yaml
